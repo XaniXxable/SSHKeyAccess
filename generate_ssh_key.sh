@@ -11,7 +11,7 @@ mkdir -p $KEY_DEST
 
 if [[ $filename_for_key && $comment_for_key ]]
 then
-    ssh-keygen -t rsa -f $KEY_DEST/$filename_for_key -N '' -b 2048 -C "$comment_for_key"
+    ssh-keygen -t ed25519 -f $KEY_DEST/$filename_for_key -N '' -C "$comment_for_key"
 else
     echo 'Usage: ./generate_shh_key.sh filename-for-key comment-for-key';
     exit -1
